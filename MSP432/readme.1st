@@ -1,0 +1,6 @@
+a framework for benchmarking code performance on MSP432 / Cortex-M0..4 chips.
+
+Two timing mechanisms are provided:
+
+1. Systicks(): using the SysTick timer;
+2. Coreticks(): using the DWT interface.
