@@ -368,6 +368,7 @@ void main_matrixmul(void) {
 * 17.
 *
 *******************************************************************************/
+#if defined(BENCHMARK_FIR)
 //#ifdef MSP430
 //#include "msp430x14x.h"
 //#endif
@@ -404,6 +405,7 @@ void main_fir(void) {
     }
     return;
 }
+#endif
 
 /*******************************************************************************
 *
@@ -413,6 +415,7 @@ void main_fir(void) {
 * structures and strings.
 *
 *******************************************************************************/
+#if defined(BENCHMARK_DHRY)
 #include <stdio.h>
 #include <string.h>
 #define LOOPS DHRY_LOOPS /* Use this for slow or 16 bit machines */
@@ -637,6 +640,7 @@ void Proc0 (void) {
 void main_dhry(void) {
     Proc0();
 }
+#endif
 
 /*******************************************************************************
 *
@@ -646,6 +650,7 @@ void main_dhry(void) {
 * fixed and floating point numbers.
 *
 *******************************************************************************/
+#if defined(BENCHMARK_WHET)
 #include <math.h>
 #include <stdio.h>
 void PA(float E[5]);
@@ -850,4 +855,4 @@ void P3(X,Y,Z) float *X,*Y,*Z;
     *Z = (X1 + Y1) / T2;
     return;
 }
-
+#endif

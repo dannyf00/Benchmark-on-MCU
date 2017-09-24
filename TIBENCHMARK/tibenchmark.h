@@ -1,6 +1,13 @@
 #ifndef TIBENCHMARK_H_INCLUDED
 #define TIBENCHMARK_H_INCLUDED
 
+//benchmark configuration
+//#define BENCHMARK_FIR							//comment out if main_fir() is not being benchmarked
+//#define BENCHMARK_DHRY							//comment out if main_dhry() is not being benchmarked
+//#define BENCHMARK_WHET							//comment out if main_whet() is not being benchmarked
+#define DHRY_LOOPS 100 /* Use this for slow or 16 bit machines */
+//end benchmark configuration
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -11,9 +18,6 @@
 //typedef unsigned long  uint32_t;				//if uint32_t isn't defined
 
 
-//benchmark configuration
-#define DHRY_LOOPS 100 /* Use this for slow or 16 bit machines */
-//end benchmark configuration
 
 //benchmark a function for a set number of times
 void benchmark(void (*func)(void), uint32_t cnt);
